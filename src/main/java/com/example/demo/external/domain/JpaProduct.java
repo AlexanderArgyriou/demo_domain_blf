@@ -1,8 +1,10 @@
 package com.example.demo.external.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -12,6 +14,7 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.JOINED)
 @Getter
 @Setter
+@ToString
 public class JpaProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
