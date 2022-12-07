@@ -1,0 +1,50 @@
+@startuml
+interface com.example.demo.inhouse.domain.repos.SmartPhoneRepo {
+}
+class com.example.demo.inhouse.domain.concrete.devices.Tablet {
+- String tabletProp
+}
+class com.example.demo.inhouse.domain.mappedsuper.Accessory {
+- String accessoryProp
+}
+class com.example.demo.inhouse.domain.mappedsuper.Tangible {
+- String tangibleProp
+}
+class com.example.demo.inhouse.domain.mappedsuper.JpaVfgProduct {
+- String seoId
+}
+class com.example.demo.inhouse.domain.concrete.accessories.Keyboard {
+- String keyboardAttr
+}
+class com.example.demo.inhouse.domain.concrete.accessories.Mouse {
+- String mouseProp
+}
+class com.example.demo.inhouse.domain.concrete.devices.SmartPhone {
+- String smartPhoneProp
+}
+class com.example.demo.inhouse.domain.concrete.accessories.Headphones {
+- String headPhoneAttr
+}
+class com.example.demo.external.domain.JpaProduct {
+- Long id
+- String jpaProductProp
+}
+class com.example.demo.DemoApplication {
++ {static} void main(String[])
+}
+class com.example.demo.inhouse.domain.mappedsuper.Device {
+- String deviceProp
+}
+
+
+org.springframework.data.jpa.repository.JpaRepository <|-- com.example.demo.inhouse.domain.repos.SmartPhoneRepo
+com.example.demo.inhouse.domain.mappedsuper.Device <|-- com.example.demo.inhouse.domain.concrete.devices.Tablet
+com.example.demo.inhouse.domain.mappedsuper.Tangible <|-- com.example.demo.inhouse.domain.mappedsuper.Accessory
+com.example.demo.inhouse.domain.mappedsuper.JpaVfgProduct <|-- com.example.demo.inhouse.domain.mappedsuper.Tangible
+com.example.demo.external.domain.JpaProduct <|-- com.example.demo.inhouse.domain.mappedsuper.JpaVfgProduct
+com.example.demo.inhouse.domain.mappedsuper.Accessory <|-- com.example.demo.inhouse.domain.concrete.accessories.Keyboard
+com.example.demo.inhouse.domain.mappedsuper.Accessory <|-- com.example.demo.inhouse.domain.concrete.accessories.Mouse
+com.example.demo.inhouse.domain.mappedsuper.Device <|-- com.example.demo.inhouse.domain.concrete.devices.SmartPhone
+com.example.demo.inhouse.domain.mappedsuper.Accessory <|-- com.example.demo.inhouse.domain.concrete.accessories.Headphones
+com.example.demo.inhouse.domain.mappedsuper.Tangible <|-- com.example.demo.inhouse.domain.mappedsuper.Device
+@enduml
